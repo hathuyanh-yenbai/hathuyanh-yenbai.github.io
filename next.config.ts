@@ -1,10 +1,10 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  cacheComponents: true,
-  partialPrefetching: true,
+  // Static HTML export for GitHub Pages (no Node server, so no image optimization).
+  output: "export",
   images: {
-    formats: ["image/avif", "image/webp"],
+    unoptimized: true,
     qualities: [75],
   },
   turbopack: {

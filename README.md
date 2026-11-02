@@ -19,8 +19,8 @@ Single-page, fully static Next.js site in Vietnamese. All company facts come fro
 npm install
 npm run dev        # http://localhost:3000
 npm run lint
-npm run build      # production build (also type-checks)
-npm run start      # serve the production build
+npm run build      # static export to out/ (also type-checks)
+npx serve out      # preview the exported site
 ```
 
 Node 20.9+ is required (developed on Node 24).
@@ -72,13 +72,13 @@ only on a 2xx response. See `.env.example`.
 
 ## Deployment
 
-The build output is fully static (`○` routes only).
+`next.config.ts` sets `output: "export"`, so `npm run build` writes a plain static site to
+`out/` (images are served unoptimized; there is no Node server).
 
-- **Vercel**: import the repository; no configuration needed. Add
-  `NEXT_PUBLIC_CONTACT_ENDPOINT` under Environment Variables if used. Point `hathuyanh.vn` DNS
-  at Vercel.
-- **Self-hosted Node**: `npm ci && npm run build && npm run start` behind a reverse proxy
-  (Nginx/Caddy) with HTTPS. Image optimization runs in the Node server.
+- **GitHub Pages** (current): `.github/workflows/deploy.yml` builds and deploys `out/` on every
+  push to `main`. In the repository's Settings → Pages, set **Source** to **GitHub Actions**.
+  `NEXT_PUBLIC_CONTACT_ENDPOINT`, if used, must be added as an `env:` on the build step.
+- **Any static host** (Netlify, Cloudflare Pages, Nginx): upload the contents of `out/`.
 
 The canonical URL, sitemap and Open Graph tags assume `https://hathuyanh.vn`
 (`company.url` in `src/data/company.ts`).
