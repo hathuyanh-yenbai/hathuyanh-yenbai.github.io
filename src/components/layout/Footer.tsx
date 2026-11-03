@@ -1,4 +1,4 @@
-import { Mail, MapPin, Phone } from "lucide-react";
+import { Mail, MapPin, MessageCircle, Phone } from "lucide-react";
 import { company, navItems } from "@/data/company";
 import { Logo } from "@/components/ui/Logo";
 
@@ -48,13 +48,31 @@ export function Footer() {
             </li>
             <li className="flex gap-3">
               <Phone aria-hidden className="mt-1 size-4 shrink-0 text-brand-400" />
-              <span className="flex flex-wrap gap-x-3 gap-y-1">
+              <ul className="space-y-2">
                 {company.phones.map((phone) => (
-                  <a key={phone.tel} href={`tel:${phone.tel}`} className="font-semibold text-white hover:text-brand-300">
-                    {phone.display}
-                  </a>
+                  <li key={phone.tel} className="flex items-center gap-3">
+                    <a
+                      href={`tel:${phone.tel}`}
+                      className="min-w-[7.5rem] font-semibold text-white tabular-nums hover:text-brand-300"
+                    >
+                      {phone.display}
+                    </a>
+                    <a
+                      href={phone.zalo}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex min-h-7 items-center gap-1 rounded-full bg-[#0068ff] px-2.5 text-xs font-semibold text-white transition-colors hover:bg-[#0055d4]"
+                    >
+                      <MessageCircle aria-hidden className="size-3.5" />
+                      Zalo
+                      <span className="sr-only">
+                        {" "}
+                        {phone.display} (mở tab mới)
+                      </span>
+                    </a>
+                  </li>
                 ))}
-              </span>
+              </ul>
             </li>
             <li className="flex gap-3">
               <Mail aria-hidden className="mt-1 size-4 shrink-0 text-brand-400" />
