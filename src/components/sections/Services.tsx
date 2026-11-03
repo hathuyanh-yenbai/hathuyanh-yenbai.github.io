@@ -1,3 +1,4 @@
+import type { CSSProperties } from "react";
 import Image from "next/image";
 import { ArrowUpRight, Check, Factory } from "lucide-react";
 import { services } from "@/data/services";
@@ -50,7 +51,11 @@ export function Services() {
               <div className="flex flex-1 flex-col p-6 sm:p-7">
                 <h3 className="text-xl font-bold text-ink sm:text-[1.35rem]">{service.title}</h3>
                 <p className="mt-3 text-[0.95rem] leading-relaxed text-muted">{service.description}</p>
-                <ul className="mt-5 grid grid-cols-1 gap-x-4 gap-y-2 text-[0.92rem] text-ink/85 sm:grid-cols-2 lg:grid-cols-2 lg:gap-x-3 lg:text-[0.88rem] xl:text-[0.92rem]">
+                {/* Two columns filled top-to-bottom, then left-to-right. */}
+                <ul
+                  style={{ "--rows": Math.ceil(service.items.length / 2) } as CSSProperties}
+                  className="mt-5 grid grid-cols-1 gap-x-4 gap-y-2 text-[0.92rem] text-ink/85 sm:grid-flow-col sm:grid-cols-2 sm:grid-rows-[repeat(var(--rows),auto)] lg:gap-x-3 lg:text-[0.88rem] xl:text-[0.92rem]"
+                >
                   {service.items.map((item) => (
                     <li key={item} className="flex items-start gap-2">
                       <Check aria-hidden className="mt-0.5 size-4 shrink-0 text-brand" />
