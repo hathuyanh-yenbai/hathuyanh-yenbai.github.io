@@ -1,4 +1,5 @@
 import { Download, Mail, MapPin, MessageCircle, Phone } from "lucide-react";
+import { ZaloLink } from "@/components/ui/ZaloLink";
 import { company } from "@/data/company";
 import { Reveal } from "@/components/ui/Reveal";
 import { ContactForm } from "./ContactForm";
@@ -46,10 +47,8 @@ export function Contact() {
                       >
                         {phone.display}
                       </a>
-                      <a
+                      <ZaloLink
                         href={phone.zalo}
-                        target="_blank"
-                        rel="noopener noreferrer"
                         className="inline-flex min-h-8 items-center gap-1.5 rounded-full bg-[#0068ff] px-3 text-sm font-semibold transition-colors hover:bg-[#0055d4]"
                       >
                         <MessageCircle aria-hidden className="size-4" />
@@ -58,7 +57,7 @@ export function Contact() {
                           {" "}
                           {phone.display} (mở tab mới)
                         </span>
-                      </a>
+                      </ZaloLink>
                     </li>
                   ))}
                 </ul>

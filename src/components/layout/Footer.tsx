@@ -1,4 +1,5 @@
 import { Mail, MapPin, MessageCircle, Phone } from "lucide-react";
+import { ZaloLink } from "@/components/ui/ZaloLink";
 import { company, navItems } from "@/data/company";
 import { Logo } from "@/components/ui/Logo";
 
@@ -57,10 +58,8 @@ export function Footer() {
                     >
                       {phone.display}
                     </a>
-                    <a
+                    <ZaloLink
                       href={phone.zalo}
-                      target="_blank"
-                      rel="noopener noreferrer"
                       className="inline-flex min-h-7 items-center gap-1 rounded-full bg-[#0068ff] px-2.5 text-xs font-semibold text-white transition-colors hover:bg-[#0055d4]"
                     >
                       <MessageCircle aria-hidden className="size-3.5" />
@@ -69,7 +68,7 @@ export function Footer() {
                         {" "}
                         {phone.display} (mở tab mới)
                       </span>
-                    </a>
+                    </ZaloLink>
                   </li>
                 ))}
               </ul>
