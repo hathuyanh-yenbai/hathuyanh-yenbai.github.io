@@ -4,6 +4,7 @@
 export interface PhoneNumber {
   display: string;
   tel: string;
+  zalo: string;
 }
 
 export interface NavItem {
@@ -33,9 +34,9 @@ export const company = {
     full: "Tổ Dân Phố Nước Mát, Phường Âu Lâu, Tỉnh Lào Cai, Việt Nam.",
   },
   phones: [
-    { display: "0985 426 522", tel: "+84985426522" },
-    { display: "0366 165 165", tel: "+84366165165" },
-    { display: "0966 562 076", tel: "+84966562076" },
+    { display: "0985 426 522", tel: "+84985426522", zalo: "https://zalo.me/0985426522" },
+    { display: "0366 165 165", tel: "+84366165165", zalo: "https://zalo.me/0366165165" },
+    { display: "0966 562 076", tel: "+84966562076", zalo: "https://zalo.me/0966562076" },
   ] satisfies PhoneNumber[],
   email: "thuyhayenbai@gmail.com",
   profilePdf: {

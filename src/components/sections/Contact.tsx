@@ -1,4 +1,4 @@
-import { Download, Mail, MapPin, Phone } from "lucide-react";
+import { Download, Mail, MapPin, MessageCircle, Phone } from "lucide-react";
 import { company } from "@/data/company";
 import { Reveal } from "@/components/ui/Reveal";
 import { ContactForm } from "./ContactForm";
@@ -37,11 +37,27 @@ export function Contact() {
               </span>
               <div>
                 <p className="text-sm text-white/60">Hotline</p>
-                <ul className="mt-1 flex flex-wrap gap-x-5 gap-y-1">
+                <ul className="mt-2 space-y-2.5">
                   {company.phones.map((phone) => (
-                    <li key={phone.tel}>
-                      <a href={`tel:${phone.tel}`} className="text-lg font-bold hover:text-brand-300">
+                    <li key={phone.tel} className="flex items-center gap-3">
+                      <a
+                        href={`tel:${phone.tel}`}
+                        className="min-w-[8.5rem] text-lg font-bold tabular-nums hover:text-brand-300"
+                      >
                         {phone.display}
+                      </a>
+                      <a
+                        href={phone.zalo}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex min-h-8 items-center gap-1.5 rounded-full bg-[#0068ff] px-3 text-sm font-semibold transition-colors hover:bg-[#0055d4]"
+                      >
+                        <MessageCircle aria-hidden className="size-4" />
+                        Zalo
+                        <span className="sr-only">
+                          {" "}
+                          {phone.display} (mở tab mới)
+                        </span>
                       </a>
                     </li>
                   ))}

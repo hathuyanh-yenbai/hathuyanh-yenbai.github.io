@@ -1,8 +1,11 @@
 import Image from "next/image";
-import { Eye, Target } from "lucide-react";
+import { Award, Eye, Handshake, HeartHandshake, SearchCheck, Sprout, Target } from "lucide-react";
 import { company, coreValues, missions, vision } from "@/data/company";
 import { Reveal } from "@/components/ui/Reveal";
 import { SectionHeading } from "@/components/ui/SectionHeading";
+
+// Same order as coreValues: Uy tín, Chất lượng, Tận tâm, Minh bạch, Phát triển bền vững.
+const coreValueIcons = [Handshake, Award, HeartHandshake, SearchCheck, Sprout];
 
 export function About() {
   return (
@@ -93,16 +96,37 @@ export function About() {
         <Reveal>
           <h3 className="text-sm font-bold uppercase tracking-[0.18em] text-muted">Giá trị cốt lõi</h3>
         </Reveal>
-        <ul className="mt-6 grid gap-px overflow-hidden rounded-3xl border border-line bg-line sm:grid-cols-2 lg:grid-cols-5">
-          {coreValues.map((value, index) => (
-            <Reveal as="li" key={value.title} delay={index * 0.06} className="bg-white p-6 sm:last:col-span-2 lg:p-7 lg:last:col-span-1">
-              <span className="text-sm font-bold text-brand tabular-nums">
-                {String(index + 1).padStart(2, "0")}
-              </span>
-              <p className="mt-3 text-lg font-bold text-ink">{value.title}</p>
-              <p className="mt-2 text-[0.92rem] leading-relaxed text-muted">{value.description}</p>
-            </Reveal>
-          ))}
+        <ul className="mt-6 grid gap-px overflow-hidden rounded-3xl bg-white/15 shadow-[0_32px_64px_-32px_rgb(16_43_36/0.55)] sm:grid-cols-2 lg:grid-cols-5">
+          {coreValues.map((value, index) => {
+            const Icon = coreValueIcons[index];
+            return (
+              <Reveal
+                as="li"
+                key={value.title}
+                delay={index * 0.06}
+                className="group relative isolate overflow-hidden bg-deep p-7 text-white transition-colors duration-300 hover:bg-brand-700 sm:last:col-span-2 lg:p-8 lg:last:col-span-1"
+              >
+                <Icon
+                  aria-hidden
+                  strokeWidth={1.25}
+                  className="absolute -right-8 -bottom-8 -z-10 size-44 -rotate-12 text-white/[0.05] transition-[color,rotate] duration-500 group-hover:rotate-0 group-hover:text-white/10"
+                />
+                <div className="flex items-start justify-between">
+                  <span className="relative grid size-20 place-items-center">
+                    <span aria-hidden className="hex-v absolute inset-0 bg-white/10" />
+                    <span className="hex-v grid size-16 place-items-center bg-gradient-to-br from-brand-400 to-brand-700 text-white shadow-lg transition-transform duration-300 group-hover:scale-110">
+                      <Icon aria-hidden className="size-8" />
+                    </span>
+                  </span>
+                  <span className="text-lg font-bold text-brand-300 tabular-nums">
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+                </div>
+                <p className="mt-7 text-2xl font-extrabold leading-tight">{value.title}</p>
+                <p className="mt-3 text-base leading-relaxed text-white/75">{value.description}</p>
+              </Reveal>
+            );
+          })}
         </ul>
       </div>
     </section>
