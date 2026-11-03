@@ -15,7 +15,7 @@ export function Services() {
             title="Giải pháp vật liệu toàn diện cho mọi công trình"
           />
           <Reveal className="max-w-md text-base leading-relaxed text-muted lg:pb-2">
-            Từ vật liệu thô cho phần móng, kết cấu đến thiết bị hoàn thiện — một đầu mối cung ứng
+            Từ vật liệu thô cho phần móng, kết cấu cho đến thiết bị hoàn thiện — một đầu mối cung ứng
             cho toàn bộ vòng đời công trình.
           </Reveal>
         </div>

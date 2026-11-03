@@ -20,7 +20,7 @@ export function Projects() {
           <Reveal className="flex flex-col gap-3 border-b border-line pb-6 sm:flex-row sm:items-end sm:justify-between">
             <h3 className="text-2xl font-extrabold text-ink sm:text-3xl">Các công trình khác</h3>
             <p className="max-w-md text-sm leading-relaxed text-muted">
-              Danh sách theo Hồ sơ năng lực 2026. Ngoài ra, doanh nghiệp còn đồng hành cùng nhiều
+              Ngoài ra, doanh nghiệp chúng tôi đã, đang và sẽ còn đồng hành cùng nhiều 
               công trình lớn nhỏ khác trong khu vực.
             </p>
           </Reveal>

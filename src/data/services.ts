@@ -18,7 +18,8 @@ export const services: Service[] = [
       "Đa dạng vật liệu thô cho công trình dân dụng và công nghiệp, nguồn hàng ổn định, cung ứng linh hoạt theo tiến độ thi công.",
     items: [
       "Xi măng",
-      "Cát xây dựng, cát san lấp",
+      "Cát xây dựng", 
+      "Cát san lấp",
       "Đá xây dựng",
       "Sắt thép xây dựng",
       "Gạch nung",
