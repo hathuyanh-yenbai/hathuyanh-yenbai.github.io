@@ -44,10 +44,7 @@ export const company = {
     label: "Tải hồ sơ năng lực 2026",
     meta: "PDF · ~11 MB",
   },
-  // Address search only — no verified map pin has been provided by the business.
-  mapSearchUrl:
-    "https://www.google.com/maps/search/?api=1&query=" +
-    encodeURIComponent("Tổ Dân Phố Nước Mát, Phường Âu Lâu, Lào Cai"),
+  mapUrl: "https://maps.app.goo.gl/uZzyqKrQtDgDi9Km6",
   // Static to keep the page fully prerendered; update yearly.
   copyrightYear: 2026,
 } as const;

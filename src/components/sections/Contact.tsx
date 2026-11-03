@@ -83,12 +83,12 @@ export function Contact() {
                 <p className="text-sm text-white/60">Địa chỉ đăng ký kinh doanh</p>
                 <address className="mt-1 not-italic font-semibold leading-relaxed">{company.address.full}</address>
                 <a
-                  href={company.mapSearchUrl}
+                  href={company.mapUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="mt-1.5 inline-block text-sm font-semibold text-brand-300 underline-offset-4 hover:underline"
                 >
-                  Tìm trên Google Maps<span className="sr-only"> (mở tab mới)</span>
+                  Xem trên Google Maps<span className="sr-only"> (mở tab mới)</span>
                 </a>
               </div>
             </li>
